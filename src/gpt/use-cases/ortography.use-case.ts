@@ -1,5 +1,10 @@
-export const ortographyCheckUseCase = async () => {
+interface InterfaceOptions {
+  prompt: string;
+}
+
+export const ortographyCheckUseCase = async (options: InterfaceOptions) => {
+  const { prompt } = options;
   return {
-    pol: 'POL',
+    prompt,
   };
 };
