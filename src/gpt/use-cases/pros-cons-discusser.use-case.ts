@@ -10,7 +10,7 @@ export const prosConsDiscusserUseCase = async (
     model: 'gpt-3.5-turbo',
     messages: [
       {
-        role: 'assistant',
+        role: 'system',
         content: `
                 You will be given a question and your task is to give an answer with pros and cons,
                 the answer must be in markdown format,
@@ -22,6 +22,8 @@ export const prosConsDiscusserUseCase = async (
         content: prompt,
       },
     ],
+    temperature: 0.8,
+    max_tokens: 500,
   });
   return completion.choices[0].message;
 };
